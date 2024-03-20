@@ -41,6 +41,9 @@ window.addEventListener("focus", function(event)
     document.getElementById('message').innerHTML = "window has focus " + nCounter; 
     nCounter = nCounter + 1; 
 }, false);
+  window.addEventListener('message', function(event) {
+    console.log("Message received from the child: " + event.data); // Message received from child
+  });
 
 
 </script>
