@@ -36,7 +36,7 @@
 var nCounter = 0;
 let logged = false;
 // Set up event handler to produce text for the window focus event
-window.addEventListener("focus", function(event) 
+window.addEventListener("visibilitychange", function(event) 
 { 
         var a = window.location.href;
 console.log(a.split('#')[1]);
