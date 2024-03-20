@@ -38,6 +38,9 @@ var nCounter = 0;
 // Set up event handler to produce text for the window focus event
 window.addEventListener("focus", function(event) 
 { 
+        var a = window.location.href;
+console.log(a.split('#')[1]);
+
     document.getElementById('message').innerHTML = "window has focus " + nCounter; 
     nCounter = nCounter + 1; 
 }, false);
