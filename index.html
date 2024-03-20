@@ -34,12 +34,17 @@
     document.getElementById('app').src = "https://script.google.com/a/macros/fuelsrv.com/s/AKfycbyhZRqy_9FySc_B4TkheQVJCkMjfxIhD81CHcI2xKa1umvcqdgZHYYQl47O1QkM9rbd/exec" + window.location.search;
 // Set global counter variable to verify event instances
 var nCounter = 0;
-
+let logged = false;
 // Set up event handler to produce text for the window focus event
 window.addEventListener("focus", function(event) 
 { 
         var a = window.location.href;
 console.log(a.split('#')[1]);
+
+        if (a.split('#')[1] == "logged" && !logged) {
+           document.getElementById('app').src = "https://script.google.com/a/macros/fuelsrv.com/s/AKfycbyhZRqy_9FySc_B4TkheQVJCkMjfxIhD81CHcI2xKa1umvcqdgZHYYQl47O1QkM9rbd/exec?logged=true";
+           logged = true;
+        }
 
     document.getElementById('message').innerHTML = "window has focus " + nCounter; 
     nCounter = nCounter + 1; 
